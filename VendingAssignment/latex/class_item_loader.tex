@@ -1,0 +1,125 @@
+\hypertarget{class_item_loader}{\section{Item\-Loader Class Reference}
+\label{class_item_loader}\index{Item\-Loader@{Item\-Loader}}
+}
+
+
+Class to deal with \hyperlink{struct_item}{Item} objects, handles the conversion of disk files into items and central storage of them.  
+
+
+
+
+{\ttfamily \#include $<$itemloader.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\-List$<$ \hyperlink{struct_item}{Item} $>$ \hyperlink{class_item_loader_af93748db68ddb6bb109e5893d93cbac5}{read\-Items\-From\-File} ()
+\begin{DoxyCompactList}\small\item\em Creates the item list from the file stored on disk. Ran on program startup. \end{DoxyCompactList}\item 
+Q\-List$<$ \hyperlink{struct_item}{Item} $>$ \hyperlink{class_item_loader_a46e4c47f55b09406d842dd0e3dd08461}{get\-Items\-As\-List} ()
+\begin{DoxyCompactList}\small\item\em Returns a copy of the item list so it can be accessed by another widget or process in the interface. \end{DoxyCompactList}\item 
+Q\-List$<$ \hyperlink{struct_item}{Item} $>$ \hyperlink{class_item_loader_ac1fdb6c2191e24cd3dda887272e916ea}{sort\-Item\-List} (Q\-List$<$ \hyperlink{struct_item}{Item} $>$ unsorted\-Item\-List)
+\begin{DoxyCompactList}\small\item\em Takes an item list and sorts it. The vending machine display requires the item list to be sorted. \end{DoxyCompactList}\item 
+void \hyperlink{class_item_loader_ae593d5eda6e517768f19fce0dd9dcb91}{delete\-Item\-By\-Item\-Code} (Q\-String item\-Code)
+\begin{DoxyCompactList}\small\item\em Delete item from the central item list by the item code specified. \end{DoxyCompactList}\item 
+\hypertarget{class_item_loader_ab0d5a686e19d53486d74b82146f71976}{void \hyperlink{class_item_loader_ab0d5a686e19d53486d74b82146f71976}{save\-Items\-To\-File} ()}\label{class_item_loader_ab0d5a686e19d53486d74b82146f71976}
+
+\begin{DoxyCompactList}\small\item\em Saves the items in the item array out to file on disk. Run this after any changes to the central item list. \end{DoxyCompactList}\item 
+void \hyperlink{class_item_loader_a86d589f5047dc97643ed952b037fd426}{add\-Item} (Q\-String item\-Name, Q\-String item\-Code, double item\-Price)
+\begin{DoxyCompactList}\small\item\em Add an item to the programs central item list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to deal with \hyperlink{struct_item}{Item} objects, handles the conversion of disk files into items and central storage of them. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_item_loader_a86d589f5047dc97643ed952b037fd426}{\index{Item\-Loader@{Item\-Loader}!add\-Item@{add\-Item}}
+\index{add\-Item@{add\-Item}!ItemLoader@{Item\-Loader}}
+\subsubsection[{add\-Item}]{\setlength{\rightskip}{0pt plus 5cm}void Item\-Loader\-::add\-Item (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{item\-Name, }
+\item[{Q\-String}]{item\-Code, }
+\item[{double}]{item\-Price}
+\end{DoxyParamCaption}
+)}}\label{class_item_loader_a86d589f5047dc97643ed952b037fd426}
+
+
+Add an item to the programs central item list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\-Name} & Name of the item. \\
+\hline
+{\em item\-Code} & Code used on the vending machine that the customer enters. \\
+\hline
+{\em item\-Price} & Price of the items, displayed to the user. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_item_loader_ae593d5eda6e517768f19fce0dd9dcb91}{\index{Item\-Loader@{Item\-Loader}!delete\-Item\-By\-Item\-Code@{delete\-Item\-By\-Item\-Code}}
+\index{delete\-Item\-By\-Item\-Code@{delete\-Item\-By\-Item\-Code}!ItemLoader@{Item\-Loader}}
+\subsubsection[{delete\-Item\-By\-Item\-Code}]{\setlength{\rightskip}{0pt plus 5cm}void Item\-Loader\-::delete\-Item\-By\-Item\-Code (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{item\-Code}
+\end{DoxyParamCaption}
+)}}\label{class_item_loader_ae593d5eda6e517768f19fce0dd9dcb91}
+
+
+Delete item from the central item list by the item code specified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\-Code} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_item_loader_a46e4c47f55b09406d842dd0e3dd08461}{\index{Item\-Loader@{Item\-Loader}!get\-Items\-As\-List@{get\-Items\-As\-List}}
+\index{get\-Items\-As\-List@{get\-Items\-As\-List}!ItemLoader@{Item\-Loader}}
+\subsubsection[{get\-Items\-As\-List}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf Item} $>$ Item\-Loader\-::get\-Items\-As\-List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_item_loader_a46e4c47f55b09406d842dd0e3dd08461}
+
+
+Returns a copy of the item list so it can be accessed by another widget or process in the interface. 
+
+\begin{DoxyReturn}{Returns}
+Q\-List$<$\-Item$>$ 
+\end{DoxyReturn}
+\hypertarget{class_item_loader_af93748db68ddb6bb109e5893d93cbac5}{\index{Item\-Loader@{Item\-Loader}!read\-Items\-From\-File@{read\-Items\-From\-File}}
+\index{read\-Items\-From\-File@{read\-Items\-From\-File}!ItemLoader@{Item\-Loader}}
+\subsubsection[{read\-Items\-From\-File}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf Item} $>$ Item\-Loader\-::read\-Items\-From\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_item_loader_af93748db68ddb6bb109e5893d93cbac5}
+
+
+Creates the item list from the file stored on disk. Ran on program startup. 
+
+\begin{DoxyReturn}{Returns}
+Q\-List$<$\-Item$>$ 
+\end{DoxyReturn}
+\hypertarget{class_item_loader_ac1fdb6c2191e24cd3dda887272e916ea}{\index{Item\-Loader@{Item\-Loader}!sort\-Item\-List@{sort\-Item\-List}}
+\index{sort\-Item\-List@{sort\-Item\-List}!ItemLoader@{Item\-Loader}}
+\subsubsection[{sort\-Item\-List}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf Item} $>$ Item\-Loader\-::sort\-Item\-List (
+\begin{DoxyParamCaption}
+\item[{Q\-List$<$ {\bf Item} $>$}]{unsorted\-Item\-List}
+\end{DoxyParamCaption}
+)}}\label{class_item_loader_ac1fdb6c2191e24cd3dda887272e916ea}
+
+
+Takes an item list and sorts it. The vending machine display requires the item list to be sorted. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unsorted\-Item\-List} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\-List$<$\-Item$>$ 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+itemloader.\-h\item 
+itemloader.\-cpp\end{DoxyCompactItemize}
